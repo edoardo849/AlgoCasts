@@ -7,27 +7,19 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-
-// bad method, but hey
 function palindrome(str) {
-    sLength = str.length;
-    return str
-        .split('')
-        .every((char,i)=>char === str[sLength-i-1]);
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1];
+  });
 }
 
 module.exports = palindrome;
 
-function palindrome_1(str) {
-    let pal = ""
-    for(let char of str){
-        pal = char + pal;
-    }
-    return pal === str;
-}
-
-function palindrome_2(str) {
-    return str.split('')
-        .reverse()
-        .join('') === str;
-}
+// function palindrome(str) {
+//   const reversed = str
+//     .split('')
+//     .reverse()
+//     .join('');
+//
+//   return str === reversed;
+// }
